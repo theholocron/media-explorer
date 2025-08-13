@@ -6,6 +6,8 @@ A media explorer to explore all media.
 
 Below are the main scripts available for development, testing, and building the project:
 
+Make sure you run `npm install` after cloning the project first.
+
 | Command                       | Description                                                                                                                                    |
 | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`npm run dev`**             | Runs the Next.js development server with hot-reloading on <http://localhost:3000>.                                                             |
@@ -18,6 +20,16 @@ Below are the main scripts available for development, testing, and building the 
 | **`npm run test:cypress`**    | Opens the Cypress test runner GUI to execute end-to-end tests and debug them interactively.                                                    |
 | **`npm run prepare`**         | Initializes Husky Git hooks to enable pre-commit and other Git lifecycle scripts.                                                              |
 | **`npm run start`**           | Starts the Next.js production server after building the app.                                                                                   |
+
+## Tech Stack
+
+Tech Stack:
+
+- NextJS - chosen for its easy integration with Storybook, Cypress, Playwright
+- Storybook - chosen for its visual testing framework
+- Cypress - chosen for E2E testing
+- Playwright - chosen for integration with Storybook, Cypress to run A11y tests
+- Vite/Vitest - test runner chosen for speed and integration with other tools
 
 ## Directory Structure
 
