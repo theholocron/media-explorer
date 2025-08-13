@@ -19,8 +19,13 @@ export const Default = {
 		},
 	},
 	play: async ({ canvas, context, step, userEvent }) => {
-		const renderedItems = await canvas.findAllByRole("listitem", { timeout: 5000 });
-		expect(renderedItems.length).toBe(10);
+		await waitFor(
+			async () => {
+				const renderedItems = await canvas.findAllByRole("listitem");
+				expect(renderedItems.length).toBe(10);
+			},
+			{ timeout: 3000 }
+		);
 
 		await step("Load more items", async () => {
 			const loadMoreBtn = await canvas.findByRole("button", { name: /load more/i });

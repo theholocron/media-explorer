@@ -1,5 +1,4 @@
 import { defineConfig } from "cypress";
-// import { mergeConfig, loadEnv } from "vite";
 
 /*
  * @see https://docs.cypress.io/app/references/configuration
@@ -17,5 +16,5 @@ export default defineConfig({
 		supportFile: false,
 		retries: 2,
 	},
-	projectId: "etpgyt",
+	projectId: "u9gw53",
 });
