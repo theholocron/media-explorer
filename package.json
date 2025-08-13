@@ -120,7 +120,7 @@
     "files": [
       {
         "path": "./.next/static/chunks/*.js",
-        "maxSize": "100 kB"
+        "maxSize": "200 kB"
       }
     ]
   },

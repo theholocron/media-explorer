@@ -19,10 +19,6 @@
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": ["./*"],
-      "@lib": ["./src/lib/*"]
-    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["cypress.config.ts", "cypress", "node_modules"]
