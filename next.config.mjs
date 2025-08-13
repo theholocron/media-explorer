@@ -6,7 +6,6 @@ import bundleAnalyzer from "@next/bundle-analyzer";
 
 const config = {
 	output: "export",
-	pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
