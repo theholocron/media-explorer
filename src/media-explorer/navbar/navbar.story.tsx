@@ -11,6 +11,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default = {
 	args: {
+		search: "",
+		filterType: "all" as "all" | "book" | "movie",
+		sortBy: "title" as "title" | "year",
+		sortOrder: "asc" as "asc" | "desc",
 		onSearchChange: fn(),
 		onFilterChange: fn(),
 		onSortChange: fn(),

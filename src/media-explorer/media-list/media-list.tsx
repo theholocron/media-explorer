@@ -1,20 +1,21 @@
 import { Loading } from "../../lib/components/";
 import { Book, Movie } from "../media/";
 import { Empty } from "./empty";
-import { type MediaItem, type FilterType } from "../use-media";
+import { type MediaItem } from "../use-media";
 
 interface MediaTypeProps {
-	type: FilterType;
 	item: MediaItem;
 	onClick: (id: string) => void;
 }
 
-function MediaType({ type, item, onClick }: MediaTypeProps) {
-	if (type === "book") {
-		return <Book item={item} role="listitem" onClick={onClick} />;
+function MediaType(props: MediaTypeProps) {
+	const { item, onClick } = props;
+
+	if (item.type === "book") {
+		return <Book item={item} onClick={() => onClick(item.id)} />;
 	}
 
-	return <Movie item={item} role="listitem" onClick={onClick} />;
+	return <Movie item={item} onClick={() => onClick(item.id)} />;
 }
 
 export interface MediaListProps {
@@ -37,7 +38,7 @@ export function MediaList(props: MediaListProps) {
 	return (
 		<div className="list-items" data-testid="media-list" role="list" aria-label="media-list">
 			{items.map((item) => (
-				<MediaType key={`${item.id}-${item}`} item={item} type={item.type} onClick={onClick} />
+				<MediaType key={item.id} item={item} onClick={onClick} />
 			))}
 		</div>
 	);

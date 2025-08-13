@@ -1,11 +1,11 @@
 import * as React from "react";
-import { type Book, type Movie } from "./media/";
+import { type TBook, type TMovie } from "./media/";
 
 export type FilterType = "book" | "movie";
 export type SortOrder = "asc" | "desc";
 export type SortBy = "title" | "year";
 
-export type MediaItem = Book | Movie;
+export type MediaItem = TBook | TMovie;
 export interface MediaResponse {
 	items: MediaItem[];
 	total: number;

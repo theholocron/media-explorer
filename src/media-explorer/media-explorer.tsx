@@ -2,7 +2,7 @@ import * as React from "react";
 import { ErrorSection, Modal } from "../lib/components/";
 import { useDebounce } from "../lib/hooks/";
 
-import { Book, Movie } from "./media";
+import { Book, type TBook, Movie, type TMovie } from "./media";
 import { MediaList } from "./media-list/";
 import { NavBar } from "./navbar/";
 import { useMedia } from "./use-media";
@@ -14,7 +14,7 @@ export interface MediaExplorerProps {
 export function MediaExplorer(props: MediaExplorerProps) {
 	const { error = "" } = props;
 	const [state, dispatch] = useMedia();
-	const [selectedItem, setSelectedItem] = React.useState<null | Book | Movie>(null);
+	const [selectedItem, setSelectedItem] = React.useState<null | TBook | TMovie>(null);
 	const [localSearch, setLocalSearch] = React.useState(state.search);
 	const debouncedSearch = useDebounce(localSearch, 300);
 	const { filterType, sortBy, sortOrder, page } = state;
@@ -49,7 +49,10 @@ export function MediaExplorer(props: MediaExplorerProps) {
 				sortOrder={sortOrder}
 				onSearchChange={setLocalSearch}
 				onFilterChange={(mediaType) =>
-					dispatch({ type: "SET_FILTER_TYPE", mediaType: mediaType === "all" ? undefined : mediaType })
+					dispatch({
+						type: "SET_FILTER_TYPE",
+						mediaType: mediaType === "all" ? undefined : (mediaType as "book" | "movie"),
+					})
 				}
 				onSortChange={(sortBy) => dispatch({ type: "SET_SORT", sortBy })}
 				onSortOrderChange={(sortOrder) => dispatch({ type: "SET_SORT_ORDER", sortOrder })}

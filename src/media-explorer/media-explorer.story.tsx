@@ -42,9 +42,20 @@ export const Default = {
 			);
 		});
 
-		await step("Search and filter", async () => {
-			// eslint-disable-next-line storybook/context-in-play-function
-			await NavBarStories.Default.play(context);
+		// eslint-disable-next-line storybook/context-in-play-function
+		await NavBarStories.Default.play({
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			...(context as any),
+			args: {
+				search: "",
+				filterType: "all",
+				sortBy: "title",
+				sortOrder: "asc",
+				onSearchChange: () => {},
+				onFilterChange: () => {},
+				onSortChange: () => {},
+				onSortOrderChange: () => {},
+			},
 		});
 
 		await step("Click the first item", async () => {
