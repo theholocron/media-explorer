@@ -28,6 +28,8 @@ jobs:
 
       - run: npm run test:storybook -- --coverage
         name: Run tests with coverage
+        env:
+          NEXT_PUBLIC_ENVIRONMENT: "development"
 
       - uses: codecov/codecov-action@v4
         name: Upload results to Codecov
@@ -60,6 +62,9 @@ jobs:
           buildScriptName: build:storybook
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NEXT_PUBLIC_ENVIRONMENT: "development"
+          STORYBOOK_NEXT_PUBLIC_ENVIRONMENT: "development"
 
   # Run interaction and accessibility tests
   interaction-and-accessibility:
@@ -86,6 +91,8 @@ jobs:
 
       - run: npm run test:storybook
         name: Run tests
+        env:
+          NEXT_PUBLIC_ENVIRONMENT: "development"
 
   # Run user flow tests with Cypress
   user-flow:

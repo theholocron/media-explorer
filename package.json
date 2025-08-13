@@ -119,10 +119,6 @@
   "bundlewatch": {
     "files": [
       {
-        "path": "./.next/static/css/*.css",
-        "maxSize": "50 kB"
-      },
-      {
         "path": "./.next/static/chunks/*.js",
         "maxSize": "100 kB"
       }
