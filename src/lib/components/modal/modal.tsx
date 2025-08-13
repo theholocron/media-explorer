@@ -6,7 +6,7 @@ export interface ModalProps {
 	onClose: () => void;
 }
 
-export function Modal(props: MediaModalProps) {
+export function Modal(props: ModalProps) {
 	const { children, onClose } = props;
 	const [mounted, setMounted] = React.useState<boolean>(false);
 
