@@ -27,7 +27,9 @@ export const mediaListHandler = http.get("/media", async ({ request }) => {
 
 			return searchableText.includes(search);
 		});
-	} else if (type) {
+	}
+
+	if (type) {
 		filtered = filtered.filter((item) => item.type === type);
 	}
 
