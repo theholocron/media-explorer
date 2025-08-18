@@ -32,6 +32,6 @@ export const Default = {
 
 		await userEvent.click(sortOrderButton);
 		await userEvent.clear(searchInput);
-		await userEvent.type(searchInput, "Harry Potter");
+		await userEvent.type(searchInput, "titanic");
 	},
 } satisfies Story;
