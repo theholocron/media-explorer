@@ -11,7 +11,7 @@ export default defineConfig({
 		},
 	},
 	e2e: {
-		baseUrl: "http://localhost:3000/", // this is the default port for `next` that runs a server
+		baseUrl: "http://localhost:5173/",
 		specPattern: "src/**/*.{cy.js,cy.ts}",
 		supportFile: false,
 		retries: 2,
