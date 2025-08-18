@@ -39,8 +39,7 @@ Below is a deeper description of the directory structure and some of the choices
 ├── .github/                 # GitHub Actions and CI setup
 ├── .husky/                  # Git hooks (pre-commit, commit-msg, etc.)
 ├── .storybook/              # Storybook setup for component, visual, and other tests
-├── app/                     # Next.js app router setup; MSW integration; layout/page shells
-│   └── page/                # Next.js page entry points; shells that point to components
+├── app/                     # App router setup; MSW integration
 ├── src/                     # Main source code
 │   ├── lib/                 # Common components and hooks (like a utility or component library)
 │   └── media-explorer/      # Core feature component of the app
@@ -78,14 +77,11 @@ Following [Chromatic's Guide to Testing](https://www.chromatic.com/frontend-test
 
 ### `app/`
 
-Next.js **App Router** setup.
+**App Router** setup.
 
 Contains:
 
-- Minimal **page** and **layout** definitions (serving as shell entry points)
 - **Mock Service Worker (MSW)** setup for API mocking in development and tests
-
-Pages in this folder are intentionally light, delegating business logic and UI to feature modules for better separation of concerns. The goal is to be able to create NextJS pages in isolation as modules to be imported in a larger more complex application.
 
 ### `src/`
 
