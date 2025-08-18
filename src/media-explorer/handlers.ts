@@ -1,5 +1,5 @@
 import { /* delay, */ http, HttpResponse } from "msw";
-import { Default as MediaListDefault } from "./media-list/media-list.story";
+import { mockMedia } from "./media-list/media-list.mock";
 
 export const mediaListErrorHandler = http.get("/media", () => HttpResponse.json([]));
 
@@ -15,7 +15,7 @@ export const mediaListHandler = http.get("/media", async ({ request }) => {
 	const orderMultiplier = sortOrder === "asc" ? 1 : -1;
 
 	// Filter by type
-	let filtered = [...MediaListDefault.args.items];
+	let filtered = [...mockMedia];
 
 	if (search) {
 		filtered = filtered.filter((item) => {
