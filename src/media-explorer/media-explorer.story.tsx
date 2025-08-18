@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, screen, waitFor } from "storybook/test";
 import { mediaListHandler, mediaListErrorHandler } from "./handlers";
 import * as NavBarStories from "./navbar/navbar.story";

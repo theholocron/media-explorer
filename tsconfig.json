@@ -1,25 +1,16 @@
 {
+  "display": "Media Explorer",
+  "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
+    "baseUrl": "./",
     "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "types": ["cypress", "node"],
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "outDir": "./dist",
+    "paths": {
+      "@/package": ["./package.json"],
+      "@/*": ["./src/*"]
+    },
+    "types": ["cypress"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["cypress.config.ts", "cypress", "node_modules"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

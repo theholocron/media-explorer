@@ -1,4 +1,4 @@
-import { type StorybookConfig } from "@storybook/nextjs-vite";
+import { type StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
 	addons: [
@@ -11,15 +11,29 @@ const config: StorybookConfig = {
 		"@storybook/addon-vitest",
 		"@chromatic-com/storybook",
 	],
+	core: {
+		builder: "@storybook/builder-vite",
+		options: {
+			viteConfigPath: "../vite.config.ts",
+		},
+	},
 	docs: {
 		defaultName: "Documentation",
 	},
-	features: {
-		experimentalRSC: true,
-	},
-	framework: "@storybook/nextjs-vite",
+	framework: "@storybook/react-vite",
 	staticDirs: ["../public"],
 	stories: ["../src/**/*.mdx", "../src/**/*.story.@(js|jsx|mjs|ts|tsx)"],
+	async viteFinal(config) {
+		// Merge custom configuration into the default config
+		const { mergeConfig } = await import("vite");
+
+		return mergeConfig(config, {
+			// Add dependencies to pre-optimization
+			optimizeDeps: {
+				include: ["react/jsx-dev-runtime", "react-dom/client"],
+			},
+		});
+	},
 };
 
 export default config;

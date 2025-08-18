@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn } from "storybook/test";
 import { Movie, type MovieProps } from "./movie";
 import { mockMovies } from "../media-list/media-list.mock";

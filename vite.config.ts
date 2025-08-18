@@ -28,6 +28,11 @@ export default defineConfig({
 	},
 	publicDir: "public",
 	plugins: [react(), storybookTest()],
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "./src"), // Example alias, adjust as needed
+		},
+	},
 	test: {
 		browser: {
 			enabled: true,

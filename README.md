@@ -10,22 +10,21 @@ Make sure you run `npm install` after cloning the project first.
 
 | Command                       | Description                                                                                                                                    |
 | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`npm run dev`**             | Runs the Next.js development server with hot-reloading on <http://localhost:3000>.                                                             |
+| **`npm run dev`**             | Runs the development server with hot-reloading on <http://localhost:3000>.                                                                     |
 | **`npm run start:storybook`** | Starts Storybook in development mode on <http://localhost:6006>, allowing you to view, interact and run tests with UI components in isolation. |
-| **`npm run build`**           | Builds the Next.js application for production deployment.                                                                                      |
+| **`npm run build`**           | Builds the application for production deployment.                                                                                              |
 | **`npm run build:storybook`** | Builds the Storybook static site and outputs it to the `docs` folder. Useful for deploying your component library documentation.               |
 | **`npm run lint`**            | Runs the Super-Linter Docker container to statically analyze your code for style and syntax issues.                                            |
 | **`npm run test`**            | Runs unit and integration tests using Vitest.                                                                                                  |
 | **`npm run test:storybook`**  | Runs Storybook-related tests with Vitest in a non-interactive mode.                                                                            |
 | **`npm run test:cypress`**    | Opens the Cypress test runner GUI to execute end-to-end tests and debug them interactively.                                                    |
 | **`npm run prepare`**         | Initializes Husky Git hooks to enable pre-commit and other Git lifecycle scripts.                                                              |
-| **`npm run start`**           | Starts the Next.js production server after building the app.                                                                                   |
+| **`npm run start`**           | Starts the storybook server after building the app.                                                                                            |
 
 ## Tech Stack
 
 Tech Stack:
 
-- NextJS - chosen for its easy integration with Storybook, Cypress, Playwright
 - Storybook - chosen for its visual testing framework
 - Cypress - chosen for E2E testing
 - Playwright - chosen for integration with Storybook, Cypress to run A11y tests
@@ -87,12 +86,6 @@ Contains:
 - **Mock Service Worker (MSW)** setup for API mocking in development and tests
 
 Pages in this folder are intentionally light, delegating business logic and UI to feature modules for better separation of concerns. The goal is to be able to create NextJS pages in isolation as modules to be imported in a larger more complex application.
-
-### `page/`
-
-Still part of Next.js routing, but these are the **route entry points** for each page.
-
-Each simply **points to the corresponding feature component**, keeping routing concerns separate from the page's business logic and presentation. This makes it easier to locate pages in a larger application, so the keeping it consistent here to mimic similar behavior.
 
 ### `src/`
 

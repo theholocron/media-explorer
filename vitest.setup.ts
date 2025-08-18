@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { setProjectAnnotations } from "@storybook/nextjs-vite";
+import { setProjectAnnotations } from "@storybook/react";
 import { afterAll, afterEach, beforeAll } from "vitest";
 import { worker } from "./app/msw/browser";
 import * as previewAnnotations from "./.storybook/preview";
