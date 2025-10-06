@@ -64,7 +64,7 @@
     "@theholocron/prettier-config": "^4.1.0",
     "@theholocron/stylelint-config": "^4.0.0",
     "@tsconfig/vite-react": "^7.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
     "@typescript-eslint/parser": "^8.38.0",
     "@vitejs/plugin-react": "^4.7.0",
     "@vitest/browser": "^3.2.4",
